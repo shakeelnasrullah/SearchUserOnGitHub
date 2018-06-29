@@ -28,7 +28,7 @@ public class UserDetailActivity extends AppCompatActivity {
     private User user;
     private RecyclerView follwersRecyclerView;
     private FollowerListAdapter adapter;
-    private TextView userNameTv, userEmailTv;
+    private TextView userNameTv, userEmailTv, followersTextMsg;
     private ImageView userImage;
     private LoadingDialog dialog;
 
@@ -46,6 +46,7 @@ public class UserDetailActivity extends AppCompatActivity {
         userEmailTv = findViewById(R.id.userEmail);
         userImage = findViewById(R.id.userImage);
         userNameTv = findViewById(R.id.userName);
+        followersTextMsg = findViewById(R.id.followers_txt_msg);
         follwersRecyclerView = findViewById(R.id.followersRecyclerView);
         follwersRecyclerView.setHasFixedSize(true);
         GridLayoutManager layoutManager = new GridLayoutManager(UserDetailActivity.this, 2);
@@ -85,6 +86,8 @@ public class UserDetailActivity extends AppCompatActivity {
                             adapter = new FollowerListAdapter(followersList);
                             follwersRecyclerView.setAdapter(adapter);
                             adapter.dataSetChanged(followersList);
+                        }else {
+                           followersTextMsg.setText(getResources().getString(R.string.followers_not_found));
                         }
 
                     } else {
