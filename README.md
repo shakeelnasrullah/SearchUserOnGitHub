@@ -10,3 +10,4 @@ All the API calls are made by <a href="http://square.github.io/retrofit/"><b>Ret
 <img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/2.png" alt="Search Result" width="250" height="450">
 <img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/3.png" alt="Search User" width="250" height="450">
 <img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/4.png" alt="Detail Screen" width="250" height="450">
+        
