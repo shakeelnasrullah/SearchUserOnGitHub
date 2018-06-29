@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    android:fillViewport="true"
+    tools:context=".UserDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGray"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_200"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@color/colorDarkGray"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/colorDarkGray"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="@dimen/margin_150"
+                        android:layout_height="@dimen/margin_150"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/margin_10"
+                        android:layout_weight="1"
+                        android:elevation="5dp"
+                        card_view:cardCornerRadius="8dp"
+                        card_view:cardUseCompatPadding="true">
+
+                        <ImageView
+                            android:id="@+id/userImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/ic_launcher" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/margin_10"
+                        android:gravity="center"
+                        android:text="12345"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/base_size"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/userEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:text="12345"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/base_size"
+                        android:textStyle="italic" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_10"
+            android:text="@string/followers_label"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/size_18"
+            android:textStyle="bold" />
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/user_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="5dp"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardUseCompatPadding="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/followersRecyclerView"
+                android:layout_width="match_parent"
+                android:background="@color/colorGray"
+                android:layout_height="match_parent" />
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+</ScrollView>

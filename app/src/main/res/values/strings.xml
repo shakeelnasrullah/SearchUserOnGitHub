@@ -1,0 +1,22 @@
+<resources>
+
+    // Search Activity's static strings belong here
+
+    <string name="app_name">TestGitHub</string>
+    <string name="search_hint">User Name</string>
+    <string name="search_user_label">Search User</string>
+    <string name="search_with_out_label">Search With Out Auth</string>
+    <string name="search__with_label">Search With Auth</string>
+    <string name="invalid_email_error_msg">Please Provide valid email.</string>
+    <string name="empty_error_msg">Please provide user name</string>
+    <string name="invalid_email_error_title">Error</string>
+    <string name="network_error_title">Network Error</string>
+    <string name="network_error_msg">Please connect to a working internet</string>
+    <string name="log_in_dialog_label">Log in</string>
+    <string name="log_in_password_label">Password</string>
+
+    // Detail Activity's static strings belong here
+    <string name="user_detail_label">User Detail</string>
+    <string name="followers_label">Followers</string>
+
+</resources>
