@@ -10,6 +10,7 @@
     <string name="invalid_email_error_msg">Please Provide valid email.</string>
     <string name="empty_error_msg">Please provide user name</string>
     <string name="invalid_email_error_title">Error</string>
+    <string name="user_not_found">User does not exit. Please try to find someone else.</string>
     <string name="network_error_title">Network Error</string>
     <string name="network_error_msg">Please connect to a working internet</string>
     <string name="log_in_dialog_label">Log in</string>
@@ -18,5 +19,6 @@
     // Detail Activity's static strings belong here
     <string name="user_detail_label">User Detail</string>
     <string name="followers_label">Followers</string>
+    <string name="followers_not_found">Followers not found</string>
 
 </resources>
