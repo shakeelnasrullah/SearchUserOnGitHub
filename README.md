@@ -1,4 +1,4 @@
-# SearchUserOnGitHub
+# Search User On GitHub
 This repository contains android project which search User of GitHub using GitHub APIs.  In search API, it takes username to search user. 
 All the API calls are made by <a href="http://square.github.io/retrofit/"><b>Retrofit 2</b></a> and for image cache I have used <a href="http://square.github.io/picasso/"><b>Picasso.</b></a></n> It is designed for both landscape and portrait mode.  Also I have used custom activity animation(See in the style.xml). For Basic <b>Authorization</b> I have generated <b>my own access token</b> to get all the users and followers(private and public).  It is used statically in the api calls.
 <a href="https://developer.github.com/v3/users/#get-a-single-user"><h2>Search User API</h2></a></n>
