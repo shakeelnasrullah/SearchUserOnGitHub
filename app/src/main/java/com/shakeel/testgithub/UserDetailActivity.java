@@ -11,9 +11,11 @@ import com.shakeel.testgithub.adapter.FollowerListAdapter;
 import com.shakeel.testgithub.models.Follower;
 import com.shakeel.testgithub.models.User;
 import com.shakeel.testgithub.networking.RetrofitClient;
+import com.shakeel.testgithub.presenter.UserDetailActivityPresenter;
 import com.shakeel.testgithub.utils.LoadingDialog;
 import com.shakeel.testgithub.utils.MyDialog;
 import com.shakeel.testgithub.utils.Utility;
+import com.shakeel.testgithub.view.UserDetailActivityView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -23,14 +25,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserDetailActivity extends AppCompatActivity {
-    private List<Follower> followersList = new ArrayList<>();
+public class UserDetailActivity extends AppCompatActivity implements UserDetailActivityView {
     private User user;
     private RecyclerView follwersRecyclerView;
     private FollowerListAdapter adapter;
     private TextView userNameTv, userEmailTv, followersTextMsg;
     private ImageView userImage;
     private LoadingDialog dialog;
+    private UserDetailActivityPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class UserDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle(getResources().getString(R.string.user_detail_label));
+        presenter = new UserDetailActivityPresenter(this, UserDetailActivity.this);
         user = (User) getIntent().getSerializableExtra(Utility.OBJECT_EXTRAS);
         dialog = new LoadingDialog(UserDetailActivity.this);
 
@@ -59,10 +62,11 @@ public class UserDetailActivity extends AppCompatActivity {
         if (user.getEmail() != null) {
             userEmailTv.setText(user.getEmail().toString());
         } else {
-            userEmailTv.setText("Null");
+            userEmailTv.setText("User public email does not exist");
+            //userEmailTv.setText(user.getFollowers());
         }
-
-        getFollowersList(user.getLogin());
+        presenter.getFollowersList(user.getLogin());
+        // getFollowersList(user.getLogin());
 
     }
 
@@ -72,46 +76,47 @@ public class UserDetailActivity extends AppCompatActivity {
         return super.onSupportNavigateUp();
     }
 
-    private void getFollowersList(String userName) {
-        if (Utility.isNetworkAvailable(UserDetailActivity.this)) {
-            dialog.show();
-            Call<List<Follower>> followerListCall = RetrofitClient.getInstance().getApiService().getFollower(Utility.getUserHeader(), userName);
-            followerListCall.enqueue(new Callback<List<Follower>>() {
-                @Override
-                public void onResponse(Call<List<Follower>> call, Response<List<Follower>> response) {
-                    if (response.body() != null && response.isSuccessful() && response.code() == 200) {
-                        dialog.dismiss();
-                        followersList = response.body();
-                        if (followersList != null) {
-                            adapter = new FollowerListAdapter(followersList);
-                            follwersRecyclerView.setAdapter(adapter);
-                            adapter.dataSetChanged(followersList);
-                        }else {
-                           followersTextMsg.setText(getResources().getString(R.string.followers_not_found));
-                        }
-
-                    } else {
-                        dialog.dismiss();
-                        MyDialog.showDialog(UserDetailActivity.this, getResources().getString(R.string.invalid_email_error_title), response.message(), null);
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<List<Follower>> call, Throwable t) {
-                    dialog.dismiss();
-                    MyDialog.showDialog(UserDetailActivity.this, getResources().getString(R.string.invalid_email_error_title), t.toString(), null);
-                }
-            });
-        } else {
-            MyDialog.showDialog(UserDetailActivity.this, getResources().getString(R.string.network_error_title), getResources().getString(R.string.network_error_msg), null);
-        }
-    }
-
     @Override
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
+
+    @Override
+    public void showLoadingDialog() {
+        dialog.show();
+    }
+
+    @Override
+    public void hideLoadingDialog() {
+        dialog.dismiss();
+    }
+
+    @Override
+    public void notifyRecyclerView(List<Follower> followers) {
+        adapter = new FollowerListAdapter(followers);
+        follwersRecyclerView.setAdapter(adapter);
+       // adapter.dataSetChanged(followersList);
+    }
+
+    @Override
+    public void showImageLoadingProgress() {
+    }
+
+    @Override
+    public void showErrorDialog(String error) {
+        MyDialog.showDialog(UserDetailActivity.this, getResources().getString(R.string.error_dialog_title), error, null);
+    }
+
+    @Override
+    public void showNetworkErrorDialog() {
+        MyDialog.showDialog(UserDetailActivity.this, getResources().getString(R.string.network_error_title), getResources().getString(R.string.network_error_msg), null);
+    }
+
+    @Override
+    public void followersNotFound() {
+        followersTextMsg.setText(getResources().getString(R.string.followers_not_found));
+    }
 }
 
