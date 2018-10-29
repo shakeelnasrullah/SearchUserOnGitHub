@@ -5,9 +5,14 @@ All the API calls are made by <a href="http://square.github.io/retrofit/"><b>Ret
 <p>I am using basic authorization to get the user.  With authorization we can get public and private users.  If we do not use authorization then API return user with public data only and we cannot get his email and someother data.</p>
 <a href="https://developer.github.com/v3/users/followers"><h2>Search Followers API</h2></a>
 <p>This api call also uses basic authorization.  This API does not provide followers name in the response.  For this now I am showing followers login field as name.  You can check the response by clicking <a href="https://developer.github.com/v3/users/followers/#list-followers-of-a-user"><b>this</b></a></p> 
+<h4>This project follows the rule of <b>MVP</b> design Pattern.</h4>
 <h2 style="color:blue;">Screen Shots</h2>
-<img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/1.png" alt="Search Screen" width="250" height="450">
-<img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/2.png" alt="Search Result" width="250" height="450">
-<img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/3.png" alt="Search User" width="250" height="450">
-<img src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/4.png" alt="Detail Screen" width="250" height="450">
+
+<div class="container">   
+<div class = "vertpan pic"><img class="aligncenter" alt="Search Screen" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/1.png" width="250" height="450" hspace="20"/></div>
+        <div class = "vertpan pic"><img class="aligncenter" alt="Search Result" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/2.png" width="250" height="450" hspace="20"/></div>
+        <div class = "vertpan pic"><img class="aligncenter" alt="Search User" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/3.png" width="250" height="450" hspace="20" /></div>
+        <div class = "vertpan pic"><img class="aligncenter" alt="Detail Screen" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/4.png" width="250" height="450" hspace="30"/></div>
+</div>
+
         
