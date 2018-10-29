@@ -9,6 +9,7 @@
     <string name="search__with_label">Search With Auth</string>
     <string name="invalid_email_error_msg">Please Provide valid email.</string>
     <string name="empty_error_msg">Please provide user name</string>
+    <string name="error_dialog_title">Error</string>
     <string name="invalid_email_error_title">Error</string>
     <string name="user_not_found">User does not exit. Please try to find someone else.</string>
     <string name="network_error_title">Network Error</string>

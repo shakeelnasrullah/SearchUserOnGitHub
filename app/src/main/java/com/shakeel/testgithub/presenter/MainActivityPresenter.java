@@ -39,7 +39,7 @@ public class MainActivityPresenter {
 
                     } else {
                         view.hideLoadingDialog();
-                        view.showErrorDialog(mContext.getResources().getString(R.string.invalid_email_error_title));
+                        view.showErrorDialog(mContext.getResources().getString(R.string.user_not_found));
 
                     }
                 }

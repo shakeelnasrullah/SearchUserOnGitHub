@@ -17,7 +17,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/activity_base_margin">
+            android:layout_margin="@dimen/margin_15">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/email_edit_text"
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="5dp"
+            android:padding="@dimen/margin_15"
             android:background="@drawable/btn_click"
             android:text="@string/search_user_label"
             android:textColor="@android:color/white"
