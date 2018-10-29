@@ -13,6 +13,6 @@ All the API calls are made by <a href="http://square.github.io/retrofit/"><b>Ret
         <div class = "vertpan pic"><img class="aligncenter" alt="Search Result" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/2.png" width="250" height="450" hspace="20"/></div>
         <div class = "vertpan pic"><img class="aligncenter" alt="Search User" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/3.png" width="250" height="450" hspace="20" /></div>
         <div class = "vertpan pic"><img class="aligncenter" alt="Detail Screen" src="https://github.com/shakeelnasrullah/SearchUserOnGitHub/blob/master/app/Screen%20Shots/4.png" width="250" height="450" hspace="30"/></div>
-</div>
+
 
         
