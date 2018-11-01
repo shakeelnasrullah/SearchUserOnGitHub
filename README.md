@@ -9,6 +9,7 @@ Like this
 ```
 [Search User API](https://developer.github.com/v3/users/#get-a-single-user)
 <p>I am using basic authorization to get the user.  With authorization we can get public and private users.  If we do not use authorization then API return user with public data only and we cannot get his email and someother data.</p>
+
 [Search Followers API](https://developer.github.com/v3/users/followers)
 <p>This api call also uses basic authorization.  This API does not provide followers name in the response.  For this now I am showing followers login field as name.  You can check the response by clicking <a href="https://developer.github.com/v3/users/followers/#list-followers-of-a-user"><b>this</b></a></p> 
 <h4>This project follows the rule of <b>MVP</b> design Pattern.</h4>
